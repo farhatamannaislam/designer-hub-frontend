@@ -117,11 +117,15 @@ const SignUpForm = () => {
           </Form>
         </Container>
 
-        <Container className={`mt-3 ${appStyles.Content}`}>
-          <Link className={styles.Link} to="/signin">
-            Already have an account? <span>Sign in</span>
+        <Container className={`my-4 p-4 text-center ${appStyles.Content}`}>
+          <Link className={`${styles.Link} ${styles.SigninLink}`} to="/signin">
+            <p>
+              <strong>Do you already have an account?</strong>
+              <span className={styles.HighlightText}> Sign in</span>
+            </p>
           </Link>
         </Container>
+
       </Col>
       <Col
         md={6}
