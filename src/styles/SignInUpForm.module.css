@@ -1,0 +1,53 @@
+.Row {
+    height: calc(100vh - 81px);
+    background-color: #e0f7fa; /* Light cyan background */
+}
+
+.Input {
+    background: #f9f9f9; /* Softer background */
+    border: 1px solid #cfd8dc; /* Light grey border */
+    box-sizing: border-box;
+    border-radius: 5px; /* Increased border radius */
+    color: #5d6d7e; /* Darker grey text */
+    text-align: center; /* Left-align text */
+    padding: 12px; /* More padding */
+    font-family: 'Arial', sans-serif; /* Changed font */
+}
+
+.Header {
+    font-style: italic; /* Italic style */
+    font-weight: 600; /* Semi-bold */
+    font-size: 18px; /* Larger font size */
+    line-height: 22px; /* Increased line height */
+    text-align: center;
+    letter-spacing: 0.15em; /* Slightly reduced letter spacing */
+    text-transform: capitalize; /* Changed from uppercase */
+    color: #1e88e5; /* Changed color to blue shade */
+}
+
+.Link {
+    text-decoration: underline; /* Underline added */
+    text-align: center;
+    display: block;
+    margin: auto;
+}
+
+.Link span {
+    color: #ff7043; /* Changed to a brighter orange */
+    font-weight: bold; /* Added bold weight */
+}
+
+.Container {
+    padding: 40px 20px; /* Increased padding */
+    background-color: #fafafa; /* Light grey background */
+}
+
+.SignInCol {
+    height: 350px; /* Adjusted height */
+    background-color: #fce4ec; /* Light pink background */
+}
+
+.SignUpCol {
+    height: 400px; /* Adjusted height */
+    background-color: #e8f5e9; /* Light green background */
+}
