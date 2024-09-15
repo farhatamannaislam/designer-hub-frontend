@@ -35,14 +35,12 @@ function PostCreateForm() {
     const imageInput = useRef(null);
     const history = useHistory();
 
-
     const handleChange = (event) => {
         setPostData({
             ...postData,
             [event.target.name]: event.target.value,
         });
     };
-
 
     const handleChangeImage = (event) => {
         if (event.target.files.length) {
