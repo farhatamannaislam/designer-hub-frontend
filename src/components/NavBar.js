@@ -103,19 +103,8 @@ const NavBar = () => {
           onClick={() => setExpanded(!expanded)}
           aria-controls="basic-navbar-nav"
         />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ml-auto text-left">
-            <NavLink
-              exact
-              className={styles.NavLink}
-              activeClassName={styles.Active}
-              to="/"
-            >
-              <i className="fa-solid fa-house-user"></i>Home
-            </NavLink>
-
-            {/* Categories Dropdown */}
-            <NavDropdown title={<><i className="fas fa-th-list"></i> Categories</>} id="basic-nav-dropdown">
+                    {/* Categories Dropdown */}
+                    <NavDropdown title={<><i className="fas fa-th-list"></i> Categories</>} id="basic-nav-dropdown">
               <NavDropdown.Item>
                 <NavLink className={styles.NavDropdown} to="/category/formal">
                   Formal
@@ -132,6 +121,16 @@ const NavBar = () => {
                 </NavLink>
               </NavDropdown.Item>
             </NavDropdown>
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="ml-auto text-left">
+            <NavLink
+              exact
+              className={styles.NavLink}
+              activeClassName={styles.Active}
+              to="/"
+            >
+              <i className="fa-solid fa-house-user"></i>Home
+            </NavLink>
 
             {currentUser ? loggedInIcons : loggedOutIcons}
           </Nav>
