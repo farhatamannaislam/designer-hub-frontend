@@ -9,3 +9,28 @@
   .Active i {
     color: #75025c;
   }
+
+/* NavBar.module.css */
+
+.NavBar {
+  display: flex;
+  align-items: center;
+}
+
+.Nav {
+  display: flex;
+  align-items: center;
+}
+
+.NavLink, .NavDropdown {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+  padding: 0;
+}
+
+.NavDropdown .dropdown-toggle {
+  display: flex;
+  align-items: center;
+  padding: 0;
+}

@@ -17,6 +17,7 @@ import NoResults from "../../assets/no-results.png";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
 import PopularProfiles from "../profiles/PopularProfiles";
+import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 
 function PostsPage({ message, filter = "" }) {
   const [posts, setPosts] = useState({ results: [] });
@@ -24,6 +25,12 @@ function PostsPage({ message, filter = "" }) {
   const { pathname } = useLocation();
 
   const [query, setQuery] = useState("");
+
+  const { type } = useParams();
+
+  if (type) {
+    filter = `category=${type}&`;
+  }
 
   useEffect(() => {
     const fetchPosts = async () => {

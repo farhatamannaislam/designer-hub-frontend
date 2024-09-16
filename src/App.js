@@ -11,7 +11,6 @@ import PostsPage from "./pages/posts/PostsPage";
 import { useCurrentUser } from "./contexts/CurrentUserContext";
 import PostEditForm from "./pages/posts/PostEditForm";
 
-
 function App() {
   const currentUser = useCurrentUser();
   const profile_id = currentUser?.profile_id || "";
@@ -21,7 +20,7 @@ function App() {
       <NavBar />
       <Container className={styles.Main}>
         <Switch>
-        <Route
+          <Route
             exact
             path="/"
             render={() => (
@@ -53,6 +52,38 @@ function App() {
           <Route exact path="/posts/create" render={() => <PostCreateForm />} />
           <Route exact path="/posts/:id" render={() => <PostPage />} />
           <Route exact path="/posts/:id/edit" render={() => <PostEditForm />} />
+
+          <Route
+            exact
+            path="/category/formal"
+            render={() => (
+              <PostsPage
+                message="No formal posts found."
+                filter="category=formal&"
+              />
+            )}
+          />
+          <Route
+            exact
+            path="/category/casual"
+            render={() => (
+              <PostsPage
+                message="No casual posts found."
+                filter="category=casual&"
+              />
+            )}
+          />
+          <Route
+            exact
+            path="/category/party"
+            render={() => (
+              <PostsPage
+                message="No party posts found."
+                filter="category=party&"
+              />
+            )}
+          />
+
           <Route render={() => <p>Page not found!</p>} />
         </Switch>
       </Container>

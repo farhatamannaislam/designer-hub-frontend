@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, Container, Nav } from "react-bootstrap";
+import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
 import logo from "../assets/logo.png";
 import styles from "../styles/NavBar.module.css";
 import { NavLink } from "react-router-dom";
@@ -32,9 +32,10 @@ const NavBar = () => {
       activeClassName={styles.Active}
       to="/posts/create"
     >
-      <i class="fa-solid fa-plus"></i>Add post
+      <i className="fa-solid fa-plus"></i>Add post
     </NavLink>
   );
+
   const loggedInIcons = (
     <>
       <NavLink
@@ -70,7 +71,7 @@ const NavBar = () => {
         activeClassName={styles.Active}
         to="/signin"
       >
-        <i class="fa-solid fa-arrow-right-to-bracket"></i>Sign in
+        <i className="fa-solid fa-arrow-right-to-bracket"></i>Sign in
       </NavLink>
       <NavLink
         to="/signup"
@@ -92,7 +93,7 @@ const NavBar = () => {
       <Container>
         <NavLink to="/">
           <Navbar.Brand>
-          <img src={logo} alt="logo" height="60" width="80"/>
+            <img src={logo} alt="logo" height="60" width="80"/>
           </Navbar.Brand>
         </NavLink>
 
@@ -110,9 +111,29 @@ const NavBar = () => {
               activeClassName={styles.Active}
               to="/"
             >
-              <i class="fa-solid fa-house-user"></i>Home
+              <i className="fa-solid fa-house-user"></i>Home
             </NavLink>
-            {currentUser ? loggedInIcons : loggedOutIcons}  
+
+            {/* Categories Dropdown */}
+            <NavDropdown title={<><i className="fas fa-th-list"></i> Categories</>} id="basic-nav-dropdown">
+              <NavDropdown.Item>
+                <NavLink className={styles.NavDropdown} to="/category/formal">
+                  Formal
+                </NavLink>
+              </NavDropdown.Item>
+              <NavDropdown.Item>
+                <NavLink className={styles.NavDropdown} to="/category/casual">
+                  Casual
+                </NavLink>
+              </NavDropdown.Item>
+              <NavDropdown.Item>
+                <NavLink className={styles.NavDropdown} to="/category/party">
+                  Party
+                </NavLink>
+              </NavDropdown.Item>
+            </NavDropdown>
+
+            {currentUser ? loggedInIcons : loggedOutIcons}
           </Nav>
         </Navbar.Collapse>
       </Container>
@@ -121,3 +142,5 @@ const NavBar = () => {
 };
 
 export default NavBar;
+
+
