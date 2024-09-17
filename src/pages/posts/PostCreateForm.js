@@ -19,8 +19,10 @@ import btnStyles from "../../styles/Button.module.css";
 
 import { useHistory } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
+import { useRedirect } from "../../hooks/useRedirect";
 
 function PostCreateForm() {
+    useRedirect("loggedOut");
     const [errors, setErrors] = useState({});
 
     const [postData, setPostData] = useState({
@@ -56,7 +58,6 @@ function PostCreateForm() {
         event.preventDefault();
         const formData = new FormData();
 
-        console.log('Category on submit:', category); // Add this log
         formData.append("category", category);
         formData.append("title", title);
         formData.append("content", content);
