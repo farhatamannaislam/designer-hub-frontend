@@ -14,6 +14,9 @@ import ProfilePage from "./pages/profiles/ProfilePage";
 import UsernameForm from "./pages/profiles/UsernameForm";
 import UserPasswordForm from "./pages/profiles/UserPasswordForm";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm";
+import EventCreateForm from "./pages/events/EventCreateForm";
+import EventPage from "./pages/events/EventPage";
+import EventEditForm from "./pages/events/EventEditForm";
 
 function App() {
   const currentUser = useCurrentUser();
@@ -51,12 +54,17 @@ function App() {
               />
             )}
           />
+
+          
           <Route exact path="/signin" render={() => <SignInForm />} />
           <Route exact path="/signup" render={() => <SignUpForm />} />
           <Route exact path="/posts/create" render={() => <PostCreateForm />} />
           <Route exact path="/posts/:id" render={() => <PostPage />} />
           <Route exact path="/posts/:id/edit" render={() => <PostEditForm />} />
           <Route exact path="/profiles/:id" render={() => <ProfilePage />} />
+          <Route exact path="/events/create" render={() => <EventCreateForm />} />
+          <Route exact path="/events/:id" render={() => <EventPage />} />
+          <Route exact path="/events/:id/edit" render={() => <EventEditForm />} />
           <Route
             exact
             path="/profiles/:id/edit/username"
