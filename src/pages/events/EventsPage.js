@@ -24,10 +24,11 @@ function EventsPage({ message, filter = "" }) {
         const { data } = await axiosReq.get(
           `/events/?${filter}query=${query}`
         );
+        console.log('Fetched Events:', data);
         setEvents(data);
         setHasLoaded(true);
       } catch (err) {
-        // console.log(err);
+        console.error("Error fetching events:", err);
       }
     };
 

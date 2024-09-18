@@ -10,6 +10,7 @@ import {
 import Avatar from "./Avatar";
 import axios from "axios";
 import useClickOutsideToggle from "../hooks/useClickOutsideToggle";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   const currentUser = useCurrentUser();
@@ -91,15 +92,49 @@ const NavBar = () => {
     </NavLink>
   );
 
+  // New Add Event Icon
+
+  const addEventIcon = (
+
+    <NavLink
+
+      className={styles.NavLink}
+      activeClassName={styles.Active}
+      to="/events/create"
+    >
+      <i className="fa-solid fa-calendar-plus"></i> Add Event
+    </NavLink>
+
+  );
+
+
   const loggedInIcons = (
     <>
-      <NavLink
-        className={styles.NavLink}
-        activeClassName={styles.Active}
-        to="/feed"
+      <NavDropdown
+        id={styles.dropdownMenu}
+        title={ // Corrected syntax with curly braces
+          <span className={`${styles.dropdownText} d-sm-inline-column`}>
+            <i className="fas fa-stream"></i> Feed
+          </span>
+        }
       >
-        <i className="fas fa-stream"></i>Feed
-      </NavLink>
+        <NavDropdown.Item
+          id={styles.dropdownItem}
+          as={Link}
+          className={styles.NavLink}
+          to="/postsfeed"
+        >
+          <i class="fa-solid fa-blog"></i>Posts
+        </NavDropdown.Item>
+        <NavDropdown.Item
+          id={styles.dropdownItem}
+          className={styles.NavLink}
+          as={Link}
+          to="/eventsfeed"
+        >
+          <i class="fa-regular fa-calendar"></i>Events
+        </NavDropdown.Item>
+      </NavDropdown>
 
       <Dropdown alignRight>
         <Dropdown.Toggle variant="link" id="notification-dropdown" className={styles.NavLink}>
@@ -208,6 +243,7 @@ const NavBar = () => {
             </NavLink>
 
             {currentUser && addPostIcon} {/* Add post icon moved here */}
+            {currentUser && addEventIcon} {/* Add event icon */}
 
             {currentUser ? loggedInIcons : loggedOutIcons}
           </Nav>

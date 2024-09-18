@@ -17,6 +17,7 @@ import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 import EventCreateForm from "./pages/events/EventCreateForm";
 import EventPage from "./pages/events/EventPage";
 import EventEditForm from "./pages/events/EventEditForm";
+import EventsPage from "./pages/events/EventsPage";
 
 function App() {
   const currentUser = useCurrentUser();
@@ -34,16 +35,33 @@ function App() {
               <PostsPage message="No results found. Adjust the search keyword." />
             )}
           />
-          <Route
-            exact
-            path="/feed"
-            render={() => (
-              <PostsPage
-                message="No results found. Adjust the search keyword or follow a user."
-                filter={`owner__followed__owner__profile=${profile_id}&`}
+              <Route
+                exact
+                path="/postsfeed"
+                render={() => (
+                  <PostsPage
+                    message="No results found. Adjust the search keyword/s or follow a user."
+                    filter={`owner__followed__owner__profile=${profile_id}&`}
+                  />
+                )}
               />
-            )}
-          />
+              <Route
+                exact
+                path="/eventspage"
+                render={() => (
+                  <EventsPage message="No results found. Adjust the search keyword/s or category." />
+                )}
+              />
+              <Route
+                exact
+                path="/eventsfeed"
+                render={() => (
+                  <EventsPage
+                    message="No results found. Adjust the search keyword/s or category, or follow a user."
+                    filter={`owner__followed__owner__profile=${profile_id}&`}
+                  />
+                )}
+              />
           <Route
             exact
             path="/liked"

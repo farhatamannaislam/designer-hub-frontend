@@ -28,7 +28,6 @@ function EventPage() {
         console.log("event",event)
         setEvent({ results: [event] });
       } catch (err) {
-        //console.log(err);
       }
     };
     handleMount();

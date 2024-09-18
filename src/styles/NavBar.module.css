@@ -36,6 +36,7 @@
   padding: 0;
 }
 
+
 .NotificationCount {
   background-color: red;
   color: white;
@@ -53,3 +54,4 @@
 .UnreadNotification {
   font-weight: bold;
 }
+
