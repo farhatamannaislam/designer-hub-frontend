@@ -93,7 +93,6 @@ const NavBar = () => {
   );
 
   // New Add Event Icon
-
   const addEventIcon = (
 
     <NavLink
@@ -108,11 +107,25 @@ const NavBar = () => {
   );
 
 
+
+
+  const eventsPageIcon = (
+
+    <NavLink
+      className={styles.NavLink}
+      activeClassName={styles.Active}
+      to="/eventspage"
+    >
+      <i className="fa-solid fa-calendar-days"></i> Events
+    </NavLink>
+  );
+
+
   const loggedInIcons = (
     <>
       <NavDropdown
         id={styles.dropdownMenu}
-        title={ // Corrected syntax with curly braces
+        title={ 
           <span className={`${styles.dropdownText} d-sm-inline-column`}>
             <i className="fas fa-stream"></i> Feed
           </span>
@@ -242,8 +255,9 @@ const NavBar = () => {
               <i className="fa-solid fa-house-user"></i>Home
             </NavLink>
 
-            {currentUser && addPostIcon} {/* Add post icon moved here */}
-            {currentUser && addEventIcon} {/* Add event icon */}
+            {currentUser && addPostIcon} 
+            {currentUser && addEventIcon} 
+            {eventsPageIcon}
 
             {currentUser ? loggedInIcons : loggedOutIcons}
           </Nav>
