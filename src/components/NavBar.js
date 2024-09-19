@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from "react";
-import { Navbar, Container, Nav, NavDropdown, Dropdown } from "react-bootstrap";
+
+import React from "react";
+import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
 import logo from "../assets/logo.png";
+import axios from "axios";
 import styles from "../styles/NavBar.module.css";
 import { NavLink } from "react-router-dom";
 import {
@@ -8,33 +10,14 @@ import {
   useSetCurrentUser,
 } from "../contexts/CurrentUserContext";
 import Avatar from "./Avatar";
-import axios from "axios";
 import useClickOutsideToggle from "../hooks/useClickOutsideToggle";
 import { Link } from "react-router-dom";
+import Notifications from "./Notifications"; 
 
 const NavBar = () => {
   const currentUser = useCurrentUser();
   const setCurrentUser = useSetCurrentUser();
-  const [notifications, setNotifications] = useState([]);
-  const [unreadCount, setUnreadCount] = useState(0);
-
   const { expanded, setExpanded, ref } = useClickOutsideToggle();
-
-  useEffect(() => {
-    const fetchNotifications = async () => {
-      try {
-        const { data } = await axios.get("/notifications/");
-        setNotifications(data.results);
-        setUnreadCount(data.results.filter((notification) => !notification.read).length);
-      } catch (err) {
-        console.error("Error fetching notifications:", err);
-      }
-    };
-
-    if (currentUser) {
-      fetchNotifications();
-    }
-  }, [currentUser]);
 
   const handleSignOut = async () => {
     try {
@@ -45,55 +28,17 @@ const NavBar = () => {
     }
   };
 
-  const markAllAsRead = async () => {
-    try {
-      await Promise.all(
-        notifications
-          .filter((notification) => !notification.read)
-          .map((notification) =>
-            axios.patch(`/notifications/${notification.id}/`, { read: true })
-          )
-      );
-      setNotifications((prevNotifications) =>
-        prevNotifications.map((notification) => ({
-          ...notification,
-          read: true,
-        }))
-      );
-      setUnreadCount(0);
-    } catch (err) {
-      console.error("Error marking notifications as read:", err);
-    }
-  };
-
-  const markAsRead = async (notificationId) => {
-    try {
-      await axios.patch(`/notifications/${notificationId}/`, { read: true });
-      setNotifications((prevNotifications) =>
-        prevNotifications.map((notification) =>
-          notification.id === notificationId
-            ? { ...notification, read: true }
-            : notification
-        )
-      );
-      setUnreadCount((prevUnreadCount) => prevUnreadCount - 1);
-    } catch (err) {
-      console.error("Error marking notification as read:", err);
-    }
-  };
-
   const addPostIcon = (
     <NavLink
       className={styles.NavLink}
       activeClassName={styles.Active}
       to="/posts/create"
     >
-      <i class="fa-solid fa-circle-plus"></i>Add post
+      <i className="fa-solid fa-circle-plus"></i>Add post
     </NavLink>
   );
 
   const addEventIcon = (
-
     <NavLink
       className={styles.NavLink}
       activeClassName={styles.Active}
@@ -101,11 +46,9 @@ const NavBar = () => {
     >
       <i className="fa-solid fa-calendar-plus"></i> Add Event
     </NavLink>
-
   );
 
   const eventsPageIcon = (
-
     <NavLink
       className={styles.NavLink}
       activeClassName={styles.Active}
@@ -114,7 +57,6 @@ const NavBar = () => {
       <i className="fa-solid fa-calendar-days"></i> Events
     </NavLink>
   );
-
 
   const loggedInIcons = (
     <>
@@ -132,7 +74,7 @@ const NavBar = () => {
           className={styles.NavLink}
           to="/postsfeed"
         >
-          <i class="fa-solid fa-blog"></i>Posts
+          <i className="fa-solid fa-blog"></i>Posts
         </NavDropdown.Item>
         <NavDropdown.Item
           id={styles.dropdownItem}
@@ -140,33 +82,11 @@ const NavBar = () => {
           as={Link}
           to="/eventsfeed"
         >
-          <i class="fa-regular fa-calendar"></i>Events
+          <i className="fa-regular fa-calendar"></i>Events
         </NavDropdown.Item>
       </NavDropdown>
 
-      <Dropdown alignRight>
-        <Dropdown.Toggle variant="link" id="notification-dropdown" className={styles.NavLink}>
-          <i className="fas fa-bell"></i>
-          {unreadCount > 0 && <span className={styles.NotificationCount}>{unreadCount}</span>}
-        </Dropdown.Toggle>
-        <Dropdown.Menu className={styles.NotificationDropdown}>
-          {notifications.length > 0 ? (
-            notifications.map((notification) => (
-              <Dropdown.Item
-                key={notification.id}
-                className={notification.read ? '' : styles.UnreadNotification}
-                onClick={() => !notification.read && markAsRead(notification.id)}
-              >
-                {notification.message}
-              </Dropdown.Item>
-            ))
-          ) : (
-            <Dropdown.Item>No new notifications</Dropdown.Item>
-          )}
-          <Dropdown.Divider />
-          <Dropdown.Item onClick={markAllAsRead}>Mark all as read</Dropdown.Item>
-        </Dropdown.Menu>
-      </Dropdown>
+      <Notifications currentUser={currentUser} />
 
       <NavLink
         className={styles.NavLink}
