@@ -17,7 +17,6 @@ const NavBar = () => {
   const setCurrentUser = useSetCurrentUser();
   const { expanded, setExpanded, ref } = useClickOutsideToggle();
 
-
   const [isMobileView, setIsMobileView] = useState(window.innerWidth <= 768);
 
   useEffect(() => {
@@ -67,9 +66,7 @@ const NavBar = () => {
 
   const loggedInIcons = (
     <>
-
       {isMobileView ? (
-
         <div className={styles.dropdownMenu}>
           <span className={`${styles.dropdownText} d-sm-inline-column`}>
             <i className="fas fa-stream"></i> Feed
@@ -96,7 +93,6 @@ const NavBar = () => {
           </ul>
         </div>
       ) : (
-
         <NavDropdown
           id={styles.dropdownMenu}
           title={
@@ -124,8 +120,6 @@ const NavBar = () => {
         </NavDropdown>
       )}
 
-      <Notifications currentUser={currentUser} />
-
       <NavLink
         className={styles.NavLink}
         to={`/profiles/${currentUser?.profile_id}`}
@@ -141,7 +135,6 @@ const NavBar = () => {
 
   const loggedOutIcons = (
     <>
-
       <NavLink
         className={styles.NavLink}
         activeClassName={styles.Active}
@@ -166,7 +159,6 @@ const NavBar = () => {
       expand="md"
       fixed="top"
     >
-
       <Container>
         <NavLink to="/">
           <Navbar.Brand>
@@ -174,12 +166,15 @@ const NavBar = () => {
           </Navbar.Brand>
         </NavLink>
 
+       {/* Conditionally render notifications only when user is signed in */}
+       {currentUser && <Notifications currentUser={currentUser} />}
+
         <Navbar.Toggle
           ref={ref}
           onClick={() => setExpanded(!expanded)}
           aria-controls="basic-navbar-nav"
         />
-        <Notifications currentUser={currentUser} />
+
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto text-left">
             <NavLink
@@ -260,5 +255,3 @@ const NavBar = () => {
 };
 
 export default NavBar;
-
-
