@@ -10,14 +10,14 @@ import {
 } from "../contexts/CurrentUserContext";
 import Avatar from "./Avatar";
 import useClickOutsideToggle from "../hooks/useClickOutsideToggle";
-import Notifications from "./Notifications"; 
+import Notifications from "./Notifications";
 
 const NavBar = () => {
   const currentUser = useCurrentUser();
   const setCurrentUser = useSetCurrentUser();
   const { expanded, setExpanded, ref } = useClickOutsideToggle();
 
-  
+
   const [isMobileView, setIsMobileView] = useState(window.innerWidth <= 768);
 
   useEffect(() => {
@@ -67,9 +67,9 @@ const NavBar = () => {
 
   const loggedInIcons = (
     <>
-    
+
       {isMobileView ? (
-       
+
         <div className={styles.dropdownMenu}>
           <span className={`${styles.dropdownText} d-sm-inline-column`}>
             <i className="fas fa-stream"></i> Feed
@@ -96,10 +96,10 @@ const NavBar = () => {
           </ul>
         </div>
       ) : (
-        
+
         <NavDropdown
           id={styles.dropdownMenu}
-          title={ 
+          title={
             <span className={`${styles.dropdownText} d-sm-inline-column`}>
               <i className="fas fa-stream"></i> Feed
             </span>
@@ -124,7 +124,7 @@ const NavBar = () => {
         </NavDropdown>
       )}
 
-      <Notifications currentUser={currentUser} />   
+      <Notifications currentUser={currentUser} />
 
       <NavLink
         className={styles.NavLink}
@@ -141,6 +141,7 @@ const NavBar = () => {
 
   const loggedOutIcons = (
     <>
+
       <NavLink
         className={styles.NavLink}
         activeClassName={styles.Active}
@@ -165,6 +166,7 @@ const NavBar = () => {
       expand="md"
       fixed="top"
     >
+
       <Container>
         <NavLink to="/">
           <Navbar.Brand>
@@ -172,31 +174,12 @@ const NavBar = () => {
           </Navbar.Brand>
         </NavLink>
 
-        {/* Categories Dropdown */}
-        <NavDropdown title={<><i className="fas fa-th-list"></i> Categories</>} id="basic-nav-dropdown">
-          <NavDropdown.Item>
-            <NavLink className={styles.NavDropdown} to="/category/formal">
-              Formal
-            </NavLink>
-          </NavDropdown.Item>
-          <NavDropdown.Item>
-            <NavLink className={styles.NavDropdown} to="/category/casual">
-              Casual
-            </NavLink>
-          </NavDropdown.Item>
-          <NavDropdown.Item>
-            <NavLink className={styles.NavDropdown} to="/category/party">
-              Party
-            </NavLink>
-          </NavDropdown.Item>
-        </NavDropdown>
-
         <Navbar.Toggle
           ref={ref}
           onClick={() => setExpanded(!expanded)}
           aria-controls="basic-navbar-nav"
         />
-
+        <Notifications currentUser={currentUser} />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto text-left">
             <NavLink
@@ -207,9 +190,65 @@ const NavBar = () => {
             >
               <i className="fa-solid fa-house-user"></i>Home
             </NavLink>
-            <Notifications currentUser={currentUser} />
-            {currentUser && addPostIcon} 
-            {currentUser && addEventIcon} 
+
+            {/* Conditional rendering for Categories */}
+            {isMobileView ? (
+              <div className={styles.dropdownMenu}>
+                <span className={`${styles.dropdownText} d-sm-inline-column`}>
+                  <i className="fas fa-th-list"></i> Categories
+                </span>
+                <ul className={styles.dropdownList}>
+                  <li>
+                    <NavLink
+                      className={styles.NavDropdown}
+                      to="/category/formal"
+                    >
+                      Formal
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      className={styles.NavDropdown}
+                      to="/category/casual"
+                    >
+                      Casual
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      className={styles.NavDropdown}
+                      to="/category/party"
+                    >
+                      Party
+                    </NavLink>
+                  </li>
+                </ul>
+              </div>
+            ) : (
+              <NavDropdown
+                title={<><i className="fas fa-th-list"></i> Categories</>}
+                id="basic-nav-dropdown"
+              >
+                <NavDropdown.Item>
+                  <NavLink className={styles.NavDropdown} to="/category/formal">
+                    Formal
+                  </NavLink>
+                </NavDropdown.Item>
+                <NavDropdown.Item>
+                  <NavLink className={styles.NavDropdown} to="/category/casual">
+                    Casual
+                  </NavLink>
+                </NavDropdown.Item>
+                <NavDropdown.Item>
+                  <NavLink className={styles.NavDropdown} to="/category/party">
+                    Party
+                  </NavLink>
+                </NavDropdown.Item>
+              </NavDropdown>
+            )}
+
+            {currentUser && addPostIcon}
+            {currentUser && addEventIcon}
             {eventsPageIcon}
 
             {currentUser ? loggedInIcons : loggedOutIcons}
