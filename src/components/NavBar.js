@@ -1,5 +1,4 @@
-
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
 import logo from "../assets/logo.png";
 import axios from "axios";
@@ -11,13 +10,21 @@ import {
 } from "../contexts/CurrentUserContext";
 import Avatar from "./Avatar";
 import useClickOutsideToggle from "../hooks/useClickOutsideToggle";
-import { Link } from "react-router-dom";
 import Notifications from "./Notifications"; 
 
 const NavBar = () => {
   const currentUser = useCurrentUser();
   const setCurrentUser = useSetCurrentUser();
   const { expanded, setExpanded, ref } = useClickOutsideToggle();
+
+  
+  const [isMobileView, setIsMobileView] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobileView(window.innerWidth <= 768);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const handleSignOut = async () => {
     try {
@@ -34,7 +41,7 @@ const NavBar = () => {
       activeClassName={styles.Active}
       to="/posts/create"
     >
-      <i className="fa-solid fa-circle-plus"></i>Add post
+      <i className="fa-solid fa-circle-plus"></i> Add post
     </NavLink>
   );
 
@@ -60,33 +67,64 @@ const NavBar = () => {
 
   const loggedInIcons = (
     <>
-      <NavDropdown
-        id={styles.dropdownMenu}
-        title={ 
+    
+      {isMobileView ? (
+       
+        <div className={styles.dropdownMenu}>
           <span className={`${styles.dropdownText} d-sm-inline-column`}>
             <i className="fas fa-stream"></i> Feed
           </span>
-        }
-      >
-        <NavDropdown.Item
-          id={styles.dropdownItem}
-          as={Link}
-          className={styles.NavLink}
-          to="/postsfeed"
+          <ul className={styles.dropdownList}>
+            <li>
+              <NavLink
+                id={styles.dropdownItem}
+                className={styles.NavLink}
+                to="/postsfeed"
+              >
+                <i className="fa-solid fa-blog"></i> Posts
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                id={styles.dropdownItem}
+                className={styles.NavLink}
+                to="/eventsfeed"
+              >
+                <i className="fa-regular fa-calendar"></i> Events
+              </NavLink>
+            </li>
+          </ul>
+        </div>
+      ) : (
+        
+        <NavDropdown
+          id={styles.dropdownMenu}
+          title={ 
+            <span className={`${styles.dropdownText} d-sm-inline-column`}>
+              <i className="fas fa-stream"></i> Feed
+            </span>
+          }
         >
-          <i className="fa-solid fa-blog"></i>Posts
-        </NavDropdown.Item>
-        <NavDropdown.Item
-          id={styles.dropdownItem}
-          className={styles.NavLink}
-          as={Link}
-          to="/eventsfeed"
-        >
-          <i className="fa-regular fa-calendar"></i>Events
-        </NavDropdown.Item>
-      </NavDropdown>
+          <NavDropdown.Item
+            id={styles.dropdownItem}
+            as={NavLink}
+            className={styles.NavLink}
+            to="/postsfeed"
+          >
+            <i className="fa-solid fa-blog"></i> Posts
+          </NavDropdown.Item>
+          <NavDropdown.Item
+            id={styles.dropdownItem}
+            as={NavLink}
+            className={styles.NavLink}
+            to="/eventsfeed"
+          >
+            <i className="fa-regular fa-calendar"></i> Events
+          </NavDropdown.Item>
+        </NavDropdown>
+      )}
 
-      <Notifications currentUser={currentUser} />
+      <Notifications currentUser={currentUser} />   
 
       <NavLink
         className={styles.NavLink}
@@ -96,7 +134,7 @@ const NavBar = () => {
       </NavLink>
 
       <NavLink className={styles.NavLink} to="/" onClick={handleSignOut}>
-        <i className="fas fa-sign-out-alt"></i>Sign out
+        <i className="fas fa-sign-out-alt"></i> Sign out
       </NavLink>
     </>
   );
@@ -108,14 +146,14 @@ const NavBar = () => {
         activeClassName={styles.Active}
         to="/signin"
       >
-        <i className="fa-solid fa-arrow-right-to-bracket"></i>Sign in
+        <i className="fa-solid fa-arrow-right-to-bracket"></i> Sign in
       </NavLink>
       <NavLink
         to="/signup"
         className={styles.NavLink}
         activeClassName={styles.Active}
       >
-        <i className="fas fa-user-plus"></i>Sign up
+        <i className="fas fa-user-plus"></i> Sign up
       </NavLink>
     </>
   );
@@ -169,7 +207,7 @@ const NavBar = () => {
             >
               <i className="fa-solid fa-house-user"></i>Home
             </NavLink>
-
+            <Notifications currentUser={currentUser} />
             {currentUser && addPostIcon} 
             {currentUser && addEventIcon} 
             {eventsPageIcon}

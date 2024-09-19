@@ -37,6 +37,14 @@
 }
 
 
+.dropdownList {
+  list-style-type: none; 
+
+}
+
+
+
+
 .NotificationCount {
   background-color: red;
   color: white;
@@ -54,4 +62,5 @@
 .UnreadNotification {
   font-weight: bold;
 }
+
 
