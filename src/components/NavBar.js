@@ -88,15 +88,13 @@ const NavBar = () => {
       activeClassName={styles.Active}
       to="/posts/create"
     >
-      <i className="fa-solid fa-plus"></i>Add post
+      <i class="fa-solid fa-circle-plus"></i>Add post
     </NavLink>
   );
 
-  // New Add Event Icon
   const addEventIcon = (
 
     <NavLink
-
       className={styles.NavLink}
       activeClassName={styles.Active}
       to="/events/create"
@@ -105,9 +103,6 @@ const NavBar = () => {
     </NavLink>
 
   );
-
-
-
 
   const eventsPageIcon = (
 
