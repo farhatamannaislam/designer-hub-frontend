@@ -48,12 +48,12 @@
 }
 
 .NotificationDropdown {
-  max-height: 300px; /* Limit the maximum height */
-  overflow-y: auto; /* Allow vertical scrolling */
-  white-space: normal; /* Allow text to wrap within the dropdown */
-  padding: 0.5rem; /* Add padding for better readability */
-  width: 250px; /* Set a fixed width for the dropdown */
-  word-wrap: break-word; /* Ensure long words break onto the next line */
+  max-height: 300px; 
+  overflow-y: auto; 
+  white-space: normal; 
+  padding: 0.5rem; 
+  width: 250px; 
+  word-wrap: break-word; 
 }
 
 .UnreadNotification {
