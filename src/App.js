@@ -18,6 +18,7 @@ import EventCreateForm from "./pages/events/EventCreateForm";
 import EventPage from "./pages/events/EventPage";
 import EventEditForm from "./pages/events/EventEditForm";
 import EventsPage from "./pages/events/EventsPage";
+import NotFound from "./components/NotFound";
 
 function App() {
   const currentUser = useCurrentUser();
@@ -35,33 +36,33 @@ function App() {
               <PostsPage message="No results found. Adjust the search keyword." />
             )}
           />
-              <Route
-                exact
-                path="/postsfeed"
-                render={() => (
-                  <PostsPage
-                    message="No results found. Adjust the search keyword/s or follow a user."
-                    filter={`owner__followed__owner__profile=${profile_id}&`}
-                  />
-                )}
+          <Route
+            exact
+            path="/postsfeed"
+            render={() => (
+              <PostsPage
+                message="No results found. Adjust the search keyword/s or follow a user."
+                filter={`owner__followed__owner__profile=${profile_id}&`}
               />
-              <Route
-                exact
-                path="/eventspage"
-                render={() => (
-                  <EventsPage message="No results found. Adjust the search keyword/s or category." />
-                )}
+            )}
+          />
+          <Route
+            exact
+            path="/eventspage"
+            render={() => (
+              <EventsPage message="No results found. Adjust the search keyword/s or category." />
+            )}
+          />
+          <Route
+            exact
+            path="/eventsfeed"
+            render={() => (
+              <EventsPage
+                message="No results found. Adjust the search keyword/s or category, or follow a user."
+                filter={`owner__followed__owner__profile=${profile_id}&`}
               />
-              <Route
-                exact
-                path="/eventsfeed"
-                render={() => (
-                  <EventsPage
-                    message="No results found. Adjust the search keyword/s or category, or follow a user."
-                    filter={`owner__followed__owner__profile=${profile_id}&`}
-                  />
-                )}
-              />
+            )}
+          />
           <Route
             exact
             path="/liked"
@@ -73,7 +74,7 @@ function App() {
             )}
           />
 
-          
+
           <Route exact path="/signin" render={() => <SignInForm />} />
           <Route exact path="/signup" render={() => <SignUpForm />} />
           <Route exact path="/posts/create" render={() => <PostCreateForm />} />
@@ -130,7 +131,7 @@ function App() {
             )}
           />
 
-          <Route render={() => <p>Page not found!</p>} />
+          <Route render={() => <NotFound />} />
         </Switch>
       </Container>
     </div>

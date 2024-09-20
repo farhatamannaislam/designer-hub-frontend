@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
+
+import Navbar from "react-bootstrap/Navbar";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import NavDropdown from "react-bootstrap/NavDropdown";
 import logo from "../assets/logo.png";
 import axios from "axios";
 import styles from "../styles/NavBar.module.css";
@@ -32,7 +36,7 @@ const NavBar = () => {
       setCurrentUser(null);
       removeTokenTimestamp();
     } catch (err) {
-      console.log(err);
+      //console.log(err);
     }
   };
 

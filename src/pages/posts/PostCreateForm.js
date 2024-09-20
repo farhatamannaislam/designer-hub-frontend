@@ -62,12 +62,11 @@ function PostCreateForm() {
         formData.append("title", title);
         formData.append("content", content);
         formData.append("image", imageInput.current.files[0]);
-        console.log('Category before submit:', category);
         try {
             const { data } = await axiosReq.post("/posts/", formData);
             history.push(`/posts/${data.id}`);
         } catch (err) {
-            console.log(err);
+            //console.log(err);
             if (err.response?.status !== 401) {
                 setErrors(err.response?.data);
             }
