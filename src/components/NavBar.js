@@ -171,8 +171,7 @@ const NavBar = () => {
             <img src={logo} alt="logo" height="60" width="80" />
           </Navbar.Brand>
         </NavLink>
-
-       {/* Conditionally render notifications only when user is signed in */}
+ 
        {currentUser && <Notifications currentUser={currentUser} />}
 
         <Navbar.Toggle
@@ -192,7 +191,6 @@ const NavBar = () => {
               <i className="fa-solid fa-house-user"></i>Home
             </NavLink>
 
-            {/* Conditional rendering for Categories */}
             {isMobileView ? (
               <div className={styles.dropdownMenu}>
                 <span className={`${styles.dropdownText} d-sm-inline-column`}>

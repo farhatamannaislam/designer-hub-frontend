@@ -14,7 +14,6 @@ describe('Avatar renders', () => {
     test('renders the avatar component with default image', () => {
         renderComponent();
       
-        // Assuming the default alt text for Avatar is "avatar"
         expect(screen.getByAltText('avatar')).toBeInTheDocument();
       });
       
@@ -22,7 +21,6 @@ describe('Avatar renders', () => {
         const testSrc = 'https://example.com/test-avatar.jpg';
         renderComponent({ src: testSrc });
       
-        // Check if the avatar with the provided src is in the document
         expect(screen.getByAltText('avatar')).toHaveAttribute('src', testSrc);
       });
 });

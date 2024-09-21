@@ -25,7 +25,6 @@ function EventPage() {
     const handleMount = async () => {
       try {
         const { data: event } = await axiosReq.get(`/events/${id}`);
-        console.log("event",event)
         setEvent({ results: [event] });
       } catch (err) {
       }

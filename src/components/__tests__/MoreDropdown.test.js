@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import { MoreDropdown, ProfileEditDropdown } from '../MoreDropdown'; // Import the components
+import { MoreDropdown } from '../MoreDropdown'; // Import the components
 
 
 const mockHistoryPush = jest.fn();
