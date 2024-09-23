@@ -32,43 +32,34 @@ The wireframes have been created for both mobile and desktop view by [Balsamiq](
 <details>
   <summary>Wireframe Home</summary>
   ![Home Desktop](docs/readme/images/homedesktop.png)
-  ![Home Mobile](docs/readme/images/Home Mobile.png)
-
+  ![Home Mobile](docs/readme/images/Home%20Mobile.png)
 </details>
 
-<details>
-  <summary>Wireframe Home</summary>
-  ![Home Mobile](docs/readme/images/Home Mobile.png)
-
-</details>
 
 <details>
   <summary>Add Post</summary>
-  ![Add Post Desktop](docs/readme/images/ Desktop Add Post.png)
-  ![Add Post Mobile](docs/readme/images/Mobile AddPost.png)
-
+  ![Add Post Desktop](docs/readme/images/Desktop%20Add%20Post.png)
+  ![Add Post Mobile](docs/readme/images/Mobile%20AddPost.png)
 </details>
 
 <details>
   <summary>Profile</summary>
-  ![Profile Desktop](docs/readme/images/Profile Desktop.png)
-  ![Profile Mobile](docs/readme/images/Profile Mobile.png)
-
+  ![Profile Desktop](docs/readme/images/Profile%20Desktop.png)
+  ![Profile Mobile](docs/readme/images/Profile%20Mobile.png)
 </details>
 
 <details>
   <summary>Sign Up</summary>
-  ![SignUp Desktop](docs/readme/images/Signup Desktop.png)
-  ![SignUp Mobile](docs/readme/images/Signup Mobile.png)
-
+  ![SignUp Desktop](docs/readme/images/Signup%20Desktop.png)
+  ![SignUp Mobile](docs/readme/images/Signup%20Mobile.png)
 </details>
 
 <details>
   <summary>Sign In</summary>
-  ![SignIn Desktop](docs/readme/images/Signin Desktop.png)
-  ![SignIn Mobile](docs/readme/images/Signin Mobile.png)
-
+  ![SignIn Desktop](docs/readme/images/Signin%20Desktop.png)
+  ![SignIn Mobile](docs/readme/images/Signin%20Mobile.png)
 </details>
+
 
 
 ## Agile Mthodology
