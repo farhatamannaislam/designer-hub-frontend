@@ -191,7 +191,7 @@ If he clicks the post/event there will be option shown in the top right corner o
 
 If there are many posts user can scroll through the posts. Infinite scroll is implemented here.
 
-## Alter
+## Alert
 
 If any mandatory field is missing the application will give altert. Such as user is not allowed to create post without title. And user can not create event
 without Title, Date and Tag.
@@ -219,7 +219,16 @@ without Title, Date and Tag.
 * JSHint Validator - to Validate Javascript.
 
 
+# Testing
 
+All the test related Information are found on [Testing.md]()
+
+# Deployment
+
+* In heroku we have to crate a new app.
+* We need to go to 'Deploy' Tab, choose GitHub as 'deployment method' and the find the repository.
+* After connecting the repo we have to click 'Deploy Branch'
+* Heroku will build the application then. When the build is finished we can see the app by clicking 'Open App'
 
 
 
