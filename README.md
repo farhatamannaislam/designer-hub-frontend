@@ -31,9 +31,27 @@ The wireframes have been created for both mobile and desktop view by [Balsamiq](
 
 <details>
   <summary>Wireframe Home</summary>
-  ![Home Desktop](docs/readme/images/homedesktop.png)
-  ![Home Mobile](docs/readme/images/Home%20Mobile.png)
+  <p>Home Desktop</p>
+  <img src="docs/readme/images/homedesktop.png" alt="Home Desktop">
+  <p>Home Mobile</p>
+  <img src="docs/readme/images/HomeMobile.png" alt="Home Mobile">
 </details>
+
+<details>
+  <summary>Add Post</summary>
+  <p>Add Post Desktop</p>
+  <img src="docs/readme/images/DesktopAddPost.png" alt="Add Post Desktop">
+  <p>Add Post Mobile</p>
+  <img src="docs/readme/images/MobileAddPost.png" alt="Add Post Mobile">
+</details>
+
+<details>
+  <summary>Profile</summary>
+  <p>Profile Desktop</p>
+  <img src="docs/readme/images/ProfileDesktop.png" alt="Profile Desktop">
+  <p>Profile Mobile</p>
+  <img src
+
 
 
 <details>
