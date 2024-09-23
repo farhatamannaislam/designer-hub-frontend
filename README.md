@@ -27,7 +27,43 @@ User can have a great community based interaction with the people from same back
 
 ## Wireframes
 
-The wireframes have been created for both mobile and desktop view by [Balsamiq](https://balsamiq.com/)
+The wireframes have been created for both mobile and desktop view by [Balsamiq](https://balsamiq.com/). The major wireframes are drawn. Add post page and add event pages are very similar. Also home page and events Page are similar. So Add Post and Home Page wireframes are drawn.
+
+<details>
+  <summary>Wireframe Home</summary>
+  ![Home Desktop](docs/readme/images/Home Desktop.png)
+  ![Home Mobile](docs/readme/images/Home Mobile.png)
+
+</details>
+
+<details>
+  <summary>Add Post</summary>
+  ![Add Post Desktop](docs/readme/images/ Desktop Add Post.png)
+  ![Add Post Mobile](docs/readme/images/Mobile AddPost.png)
+
+</details>
+
+<details>
+  <summary>Profile</summary>
+  ![Profile Desktop](docs/readme/images/Profile Desktop.png)
+  ![Profile Mobile](docs/readme/images/Profile Mobile.png)
+
+</details>
+
+<details>
+  <summary>Sign Up</summary>
+  ![SignUp Desktop](docs/readme/images/Signup Desktop.png)
+  ![SignUp Mobile](docs/readme/images/Signup Mobile.png)
+
+</details>
+
+<details>
+  <summary>Sign In</summary>
+  ![SignIn Desktop](docs/readme/images/Signin Desktop.png)
+  ![SignIn Mobile](docs/readme/images/Signin Mobile.png)
+
+</details>
+
 
 ## Agile Mthodology
 
