@@ -37,6 +37,12 @@ The wireframes have been created for both mobile and desktop view by [Balsamiq](
 </details>
 
 <details>
+  <summary>Wireframe Home</summary>
+  ![Home Mobile](docs/readme/images/Home Mobile.png)
+
+</details>
+
+<details>
   <summary>Add Post</summary>
   ![Add Post Desktop](docs/readme/images/ Desktop Add Post.png)
   ![Add Post Mobile](docs/readme/images/Mobile AddPost.png)
