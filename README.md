@@ -102,7 +102,132 @@ The main body is white so that posts are have more highlights. Buttons are brigh
 
 * Typography: The main font of this site is Merriweather with a fallback of  Sans-Serif .
 
-* Imagery: All the images used in this website are taken from [Pixabay](https://pixabay.com/images/search/free%20images/)
+* Imagery: All the images used in this website are taken from [Pixabay](https://pixabay.com/images/search/free%20images/) . The logo is made from 
+[FreeLogoDesign](https://www.freelogodesign.org/)
+
+# Features
+
+## Navigation
+
+The navigation bar is visible on the top in desktop view. In mobile view it will come under a Hamburger Icon. A new user /logged out user can see
+navbar with Logo, Home, Categories, Events, Sign In and Sign Up.
+
+![Navbar for new user](docs/readme/images/navbarnewuser.png)
+
+After siging in user can see navbar with Logo, Notifications bell icon, Home, Categories, Add Post, Add Event, Events, Feed, Profile and Sign Out.
+
+![Navbar for Logged in user](docs/readme/images/navbarloggedin.png)
+
+## Home 
+
+Logged In / Logged out all users can see Home. There are posts in the home page. Posts are shown with author name , creation date, title, content no of likes and no of comments. In desktop view on the right side of the posts Most followed profiles are visible. In mobile view four most followed profiles are visible on the top.
+
+Above the posts there is search option. User can search posts by authorname, category, title, content.
+
+![Home](docs/readme/images/Home.png)
+
+## Category
+
+Under the category three options are available Formal, Casual and Party. User can filter post by selecting the category.
+
+![Category](docs/readme/images/Category.png)
+
+## Events
+
+Events has similar features as posts. Logged In /Logged out all users can see this. User can search events with title, profile, event date or tags. Authorname, creation date, title, content, event date and tag is visible for an event. On the right side of the posts Most followed profiles are visible.
+
+![Events](docs/readme/images/event.png)
+
+## Sign Up
+
+Sign Up page comes with the option of username, password, confirm password input fields and sign up button. It will also ask the user if he already has an account. Is so it will direct the user to a link with sign in. On the right side of the page there is a beautiful stylish photo of an woman.
+
+
+![Sign Up](docs/readme/images/signup.png)
+
+## Sign In
+
+Sign In page comes with username and passowrd input fields and sign in button. There is a picture of a stylish man on the right side of the page. The page will ask the user that if he doesn't have an account. If so it will redirect the user to Sign Up via link.
+
+![Sign In](docs/readme/images/signin.png)
+
+## Notifications
+
+A logged in user can see the bell icon of notifications. Under this icon he will see all the notifications related to like, comment on his post or getting new follower. He can individually click a notification and read it. There is also an option Mark all as read. The no of unread notifications are showed beside the bell icon.
+
+![Notifications](docs/readme/images/Notification.png)
+
+## Add Post
+
+A logged in user has the option to add a post. In the add post page there is input fields for title, content, selecting category from formal, casual or party and uploading image. There is cancle and create button along with it.
+
+![Add Post](docs/readme/images/addpost.png)
+
+## Add Event
+
+A logged in user has the option to add an event. In the add event page there is input fields for title, description, event date, tags and uploading image. There is cancle and create button along with it.
+
+![Add Event](docs/readme/images/addevent.png)
+
+## Feed
+
+In the feed option user can see post and events by the users whom he follows.
+
+![Feed](docs/readme/images/feed.png)
+
+## Profile
+
+A logged in user can see his profile by clicking profile tab. The number of his posts, no of his followers and no of his following users are visible on the top beside his profile picture. His posts are visible under this Information. There is an option for the user to edit profile, change username and/or password. A profile will be automatically created when an user signs up. There is a default avatar that will be shown as user profile picture. User can change this avatar to his own profile picture.
+
+![Profile](docs/readme/images/profile.png)
+
+## Edit/Delete Post and Event
+
+User can edit/delete his own post and event.
+
+If he clicks the post/event there will be option shown in the top right corner of the post and event to edit or delete it.
+
+## Infinite Scroll
+
+If there are many posts user can scroll through the posts. Infinite scroll is implemented here.
+
+## Alter
+
+If any mandatory field is missing the application will give altert. Such as user is not allowed to create post without title. And user can not create event
+without Title, Date and Tag.
+
+# Technologies Used
+
+* HTML5
+* CSS
+* JavaScript
+* React.js
+
+# Frameworks and tools
+
+* Heroku - for deployment.
+* React Bootstrap - for building solid, responsive, mobile-first sites.
+* Balsamiq - to create wireframes.
+* Am I responsive? - to check website responsiveness.
+* Lighthouse - for site performance.
+* Colormind - for generating color palette
+* Chrome Dev Tool - to debug and check responsiveness.
+* Github - to host the repository, store the commit history and manage the project board containing user stories.
+* Cloudinary - hosting image files of the project.
+* W3C HTML Validator- to validate HTML.
+* W3C CSS Validator - to validate CSS.
+* JSHint Validator - to Validate Javascript.
+
+
+
+
+
+
+
+
+
+
+
 
 
 
