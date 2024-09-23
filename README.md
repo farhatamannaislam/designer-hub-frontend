@@ -40,7 +40,7 @@ The wireframes have been created for both mobile and desktop view by [Balsamiq](
 <details>
   <summary>Add Post</summary>
   <p>Add Post Desktop</p>
-  <img src="docs/readme/images/DesktopAddPost.png" alt="Add Post Desktop">
+  <img src="docs/readme/images/addpostdesktop.png" alt="Add Post Desktop">
   <p>Add Post Mobile</p>
   <img src="docs/readme/images/MobileAddPost.png" alt="Add Post Mobile">
 </details>
@@ -50,33 +50,25 @@ The wireframes have been created for both mobile and desktop view by [Balsamiq](
   <p>Profile Desktop</p>
   <img src="docs/readme/images/ProfileDesktop.png" alt="Profile Desktop">
   <p>Profile Mobile</p>
-  <img src
-
-
-
-<details>
-  <summary>Add Post</summary>
-  ![Add Post Desktop](docs/readme/images/Desktop%20Add%20Post.png)
-  ![Add Post Mobile](docs/readme/images/Mobile%20AddPost.png)
-</details>
-
-<details>
-  <summary>Profile</summary>
-  ![Profile Desktop](docs/readme/images/Profile%20Desktop.png)
-  ![Profile Mobile](docs/readme/images/Profile%20Mobile.png)
+  <img src="docs/readme/images/ProfileMobile.png" alt="Profile Mobile">
 </details>
 
 <details>
   <summary>Sign Up</summary>
-  ![SignUp Desktop](docs/readme/images/Signup%20Desktop.png)
-  ![SignUp Mobile](docs/readme/images/Signup%20Mobile.png)
+  <p>SignUp Desktop</p>
+  <img src="docs/readme/images/SignupDesktop.png" alt="SignUp Desktop">
+  <p>SignUp Mobile</p>
+  <img src="docs/readme/images/SignupMobile.png" alt="SignUp Mobile">
 </details>
 
 <details>
   <summary>Sign In</summary>
-  ![SignIn Desktop](docs/readme/images/Signin%20Desktop.png)
-  ![SignIn Mobile](docs/readme/images/Signin%20Mobile.png)
+  <p>SignIn Desktop</p>
+  <img src="docs/readme/images/SigninDesktop.png" alt="SignIn Desktop">
+  <p>SignIn Mobile</p>
+  <img src="docs/readme/images/SigninMobile.png" alt="SignIn Mobile">
 </details>
+
 
 
 
