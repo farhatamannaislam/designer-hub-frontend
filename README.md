@@ -240,7 +240,6 @@ without Title, Date and Tag.
 * Cloudinary - hosting image files of the project.
 * W3C HTML Validator- to validate HTML.
 * W3C CSS Validator - to validate CSS.
-* JSHint Validator - to Validate Javascript.
 
 
 # Testing
