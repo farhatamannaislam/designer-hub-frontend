@@ -9,11 +9,35 @@ The live website can be found [here](https://designerhubfrontend-3b76bba91fa8.he
 # Table of Contents
 
 1. [Project](#project)
-2.
-
-
-
-
+   1. [User Goal](#user-goal)
+   2. [Project Development](#project-development)
+      * [Wireframes](#wireframes)
+      * [Agile Methodology](#agile-methodology)
+   3. [Design Choices](#design-choices)
+2. [Features](#features)
+   1. [Navigation](#navigation)
+   2. [Home](#home)
+   3. [Category](#category)
+   4. [Events](#events)
+   5. [Sign Up](#sign-up)
+   6. [Sign In](#sign-in)
+   7. [Notifications](#notifications)
+   8. [Add Post](#add-post)
+   9. [Add Event](#add-event)
+   10. [Feed](#feed)
+   11. [Profile](#profile)
+   12. [Edit/Delete Post and Event](#editdelete-post-and-event)
+   13. [Infinite Scroll](#infinite-scroll)
+   14. [Alert](#alert)
+3. [Technologies Used](#technologies-used)
+4. [Frameworks and Tools](#frameworks-and-tools)
+5. [Testing](#testing)
+6. [Deployment](#deployment)
+   * [Connect React Frontend and API Backend](#connect-react-frontend-and-api-backend)
+7. [Fork the Repository](#fork-the-repository)
+8. [Clone the Repository](#clone-the-repository)
+9. [Credits](#credits)
+10. [Acknowledgments](#acknowledgments)
 
 
 # Project
@@ -221,7 +245,7 @@ without Title, Date and Tag.
 
 # Testing
 
-All the test related Information are found on [Testing.md]()
+All the test related Information are found on [TESTING.md]()
 
 # Deployment
 
@@ -229,6 +253,44 @@ All the test related Information are found on [Testing.md]()
 * We need to go to 'Deploy' Tab, choose GitHub as 'deployment method' and the find the repository.
 * After connecting the repo we have to click 'Deploy Branch'
 * Heroku will build the application then. When the build is finished we can see the app by clicking 'Open App'
+
+# Connect React Frontend and API backend
+
+* When we set up the workspace and a basic deploy to Heroku is done, we canc onnect react workspace to our AI.
+* In the Heroku dashboard wehave to go to the API application settings
+* In 'Settings' we have to add a new Config Var called 'CLIENT_ORIGIN'. The value would be the URL for our deployed React application.
+* Then we need to add another Config Var called 'CLIENT_ORIGIN_DEV' and its value would be URL of our Gitpod preview link.
+* In front end workspace we need to install Axios.
+* We need to create a directory named 'API' and inside it a file called 'axiosDefaults'.
+* We need to import axios at the top of the file.
+* We have to define our base URL which is the URL of our deployed API project.
+* We have to set the content-type header to multi-part/form-data as the API will need to deal with images as well as text in it's requests.
+* In order to avoid any CORS issues, we need to set withCredentials to True.
+* Finally we need to import this file into App.js to be used across all pages.
+
+# Fork the Repository
+
+It is possible to make an independent copy of a GitHub Repository by forking the GitHub account. The copy can then be viewed and edited without affecting the original repository. To fork the repository the steps are given:
+
+After logging in to GitHub, we need to locate the repository. On the top right side of the page there is a 'Fork' button. We need to click on the button to create a copy of the original repository.
+
+# Clone the Repository
+
+In order to create a clone, we need to click on the 'Code' button inside the selected repository and then select the 'Clone' option from the dropdown list. This clone copy will continue to synchronize with the original repository.
+
+# Credits 
+* React BootStrap Documentation
+* Stack Overflow
+* W3C School
+* React Docmentation
+* Code Institute Moments walkthrough Project
+
+# Acknowledgments
+
+* My mentor Antonio Rodriguez for his precious guidance and advice.
+* Code Institute Tutors and slack Community for their support, guiding and valuable information.
+
+
 
 
 
