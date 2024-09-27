@@ -158,6 +158,6 @@ No error found on [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
 ![W3C CSS Validator](docs/readme/images/cssvalidator.png)
 
 ESlint validatin is done for the .js files. Most of the files are taken from Moments and coding is done for the custom project following moments guideline.
-The ESlint errors that are present in the Moments walkthrough are also present in designerhub. Along with some additional similar errors, because I have added my custom apps. As they don't create any major functionality issue. They are kept as it is.
+The ESlint errors that are present in the Moments walkthrough are also present in designerhub. Along with some additional similar errors, because I have added my custom apps. As they don't create any major functionality issue, are kept as it is.
 
 
