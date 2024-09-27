@@ -120,7 +120,7 @@ The user stories are given below:
 ## Design Choices
 
 * Color: Designer Hub is a provides a vibrant and approachable environment for users. I used vibrant pink logo with a baby pink nav bar color.
-The main body is white so that posts are have more highlights. Buttons are bright purple with white text. 
+The main body is white so that posts are have more highlights. Buttons are bright purple with white text. The color palette is generated using [Colormind](http://colormind.io/)
 
 ![Color palatte](docs/readme/images/colormind.png)
 
