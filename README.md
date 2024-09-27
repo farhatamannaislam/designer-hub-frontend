@@ -246,6 +246,7 @@ Epics are inserted once the stories were completed. Unfortunately it was not ins
 * Cloudinary - hosting image files of the project.
 * W3C HTML Validator- to validate HTML.
 * W3C CSS Validator - to validate CSS.
+* ESLint Validator - to validate JavaScript
 
 
 # Testing
