@@ -222,6 +222,10 @@ If there are many posts user can scroll through the posts. Infinite scroll is im
 If any mandatory field is missing the application will give altert. Such as user is not allowed to create post without title. And user can not create event
 without Title, Date and Tag.
 
+## Future Improvements
+
+Epics are inserted once the stories were completed. Unfortunately it was not inserted along with the story planning. So in future Epic mangement time can be improved.
+
 # Technologies Used
 
 * HTML5
