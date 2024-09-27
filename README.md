@@ -6,6 +6,8 @@ The live website can be found [here](https://designerhubfrontend-3b76bba91fa8.he
 
 ![Responsitor Imaget](docs/readme/images/responsitor.png)
 
+This README is for my frontend. More information about my backend could be found [here](https://github.com/farhatamannaislam/designer-hub-backend)
+
 # Table of Contents
 
 1. [Project](#project)
