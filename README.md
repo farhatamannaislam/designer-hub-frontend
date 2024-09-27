@@ -244,7 +244,7 @@ without Title, Date and Tag.
 
 # Testing
 
-All the test related Information are found on [TESTING.md]()
+All the test related Information are found on [TESTING.md](./TESTING.md)
 
 # Deployment
 
